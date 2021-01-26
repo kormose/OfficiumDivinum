@@ -159,11 +159,8 @@ class Date:
         -------
 
         """
-        if self.date:
-            return self.date
-        else:
-            self.date = dsl_parser(self.rules, year)
-            return self.date
+        self.date = dsl_parser(self.rules, year)
+        return self.date
 
 
 @total_ordering
