@@ -1,13 +1,12 @@
-import json
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import dateutil.parser as dp
 import jsonpickle
-from flask import Flask
+from flask import Flask, jsonify, request
 from jinja2 import Environment, PackageLoader
 
 from ..objects import datastructures  # needed for unpickling.
-from ..objects.datastructures import *
 
 env = Environment(loader=PackageLoader("OfficiumDivinum.api", "template/html/"))
 martyrology_template = env.get_template("martyrology.html")
@@ -55,12 +54,11 @@ def raw_query(day):
 
 def init():
     load_martyrology()
-    print(martyrology[0])
 
 
 def json_query(day):
     old_date, martyrology = raw_query(day)
-    return json.dumps({"old_date": old_date, "content": martyrology})
+    return jsonify({"old_date": old_date, "content": martyrology})
 
 
 invalid_date = "<title>Invalid date supplied</title>"
@@ -68,14 +66,25 @@ invalid_date = "<title>Invalid date supplied</title>"
 api = Flask(__name__)
 
 
-@api.route("/martyrology/<day>", methods=["GET"])
-def html_query(day):
+@api.route("/martyrology/", methods=["GET"])
+def get_martyrology():
+    args = request.args
+    print(args)
     try:
-        day = dp.parse(day).date()
-        print(day)
-    except ValueError:
-        return invalid_date
+        day = dp.parse(args["date"])
+    except KeyError:
+        day = datetime.now() + timedelta(days=1)
+    day = day.date()
 
+    try:
+        if args["type"] == "json":
+            return json_query(day)
+    except KeyError:
+        pass
+    return html_query(day)
+
+
+def html_query(day):
     old_date, content = raw_query(day)
     args = {"old_date": old_date, "content": content}
     return martyrology_template.render(**args)
