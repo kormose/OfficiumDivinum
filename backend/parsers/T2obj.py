@@ -13,6 +13,8 @@ def parse_DO_sections(lines: list):
     content = []
     for line in lines:
         line = line.strip()
+        if line == "_":
+            continue
         if line.startswith("[") and line.endswith("]"):
             if current_section:
 
