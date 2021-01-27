@@ -22,12 +22,12 @@ def parse_file(fn: Path) -> Union[Martyrology, list[MartyrologyInfo]]:
     -------
     Martyrology object with rule for specific day.
     """
+    if fn.stem == "Mobile":
+        return parse_mobile_file(fn)
+
     month, day = (int(i) for i in fn.stem.split("-"))
     datestr = f"{day} {months[month - 1]}"
     content = []
-
-    if fn.stem == "Mobile":
-        return parse_mobile_file(fn)
 
     with fn.open() as f:
         old_date = f.readline().strip()
