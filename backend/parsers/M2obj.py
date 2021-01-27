@@ -69,8 +69,9 @@ def parse_mobile_file(fn: Path) -> list[MartyrologyInfo]:
                 continue
             elif datestr == "10-DU":
                 datestr = christ_the_king_datestr
-            elif datestr == "Defuncti":
-                datestr = "2 Nov"
+            elif datestr == "Defuncti":  # Not sure what we need this for.
+                continue
+                # datestr = "2 Nov"
 
         mobile.append(MartyrologyInfo(Date(datestr), section))
     return mobile
