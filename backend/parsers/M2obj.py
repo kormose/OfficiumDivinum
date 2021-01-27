@@ -33,7 +33,9 @@ def parse_file(fn: Path) -> Union[Martyrology, list[MartyrologyInfo]]:
         old_date = f.readline().strip()
         f.readline()
         for line in f.readlines():
-            content.append(line.strip())
+            line = line.strip()
+            if not line == "_":
+                content.append(line)
 
     return Martyrology(Date(datestr), old_date, content)
 
