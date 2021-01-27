@@ -16,6 +16,11 @@ The following parsers are supplied:
 - K2obj :: parse files called things like ~K1960.txt~ which represent
   immovable feasts into feast objects.
 - M2obj :: parse martyrology files into Martyrology objects.
+- T20bj :: parse temporal files
+
+Needed:
+
+- S2Obj :: parse sanctoral files which are in Sancti/ 
 
 * Discoveries
 - Holy Name of Jesus :: This feast is celebrated on the 2nd Sunday
