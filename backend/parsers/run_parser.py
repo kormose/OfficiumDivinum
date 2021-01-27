@@ -4,6 +4,7 @@ from pathlib import Path
 
 from jsonpickle import encode
 
+from ..objects import Martyrology
 from . import K2obj, M2obj, T2obj
 
 
@@ -35,10 +36,11 @@ def pokemon(lang, calendar, root):
 
     martyrology = []
     for f in (root / "Martyrologium").glob("*.txt"):
-        try:
-            martyrology.append(M2obj.parse_file(f))
-        except ValueError:
-            pass
+        obj_or_objs = M2obj.parse_file(f)
+        if isinstance(obj_or_objs, Martyrology):
+            martyrology.append(obj_or_objs)
+        else:
+            martyrology += obj_or_objs
     return sanctoral, temporal, martyrology
 
 
