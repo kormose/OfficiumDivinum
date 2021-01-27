@@ -24,16 +24,17 @@ def temporal_to_json(fn: Path, calendar: str):
 
 def pokemon(lang, calendar, root):
     """Catch them all!"""
+    root = Path(f"{root}/{lang}").expanduser()
     sanctoral = K2obj.parse_file(
-        Path(f"{root}/{lang}/Tabulae/K{calendar}.txt"),
+        root / f"Tabulae/K{calendar}.txt",
         calendar,
     )
     temporal = []
-    for f in Path(f"{root}/{lang}/Tempora").glob("*.txt"):
+    for f in (root / "Tempora").glob("*.txt"):
         temporal.append(T2obj.parse_file(f, calendar))
 
     martyrology = []
-    for f in Path(f"{root}/{lang}/Martyrologium").glob("*.txt"):
+    for f in (root / "Martyrologium").glob("*.txt"):
         try:
             martyrology.append(M2obj.parse_file(f))
         except ValueError:
@@ -42,10 +43,8 @@ def pokemon(lang, calendar, root):
 
 
 def pokemon_to_json(lang, calendar, root):
-    sanctoral, temporal, martyrology = pokemon(lang, calendar, root)
-    print(encode(sanctoral))
-    print(encode(temporal))
-    print(encode(martyrology))
+    things = pokemon(lang, calendar, root)
+    return (encode(i, indent=2) for i in things)
 
 
 if __name__ == "__main__":
