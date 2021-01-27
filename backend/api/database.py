@@ -60,6 +60,30 @@ year_tables = {"martyrology": None}
 raw_tables = {}
 
 
+def assemble_martyrology(candidates: list, year: int):
+    """
+    Assemble and resolve martyrolgy (easy, as we just stuff them together.)
+
+    Parameters
+    ----------
+    candidates: list : candidates for the day.
+
+    year: int : year.
+
+
+    Returns
+    -------
+    old_date string and content list, with extra stuff tacked on top.
+    """
+    extra_info = []
+    for candidate in candidates:
+        try:
+            old_date, content = candidate.render(year)
+        except AttributeError:
+            extra_info += candidate.content
+    return old_date, extra_info + content
+
+
 def raw_query(day, table):
     """
     Query table for data on day.
@@ -77,14 +101,19 @@ def raw_query(day, table):
     global raw_tables, year_tables
     year = day.year
     try:
-        return year_tables[table][year][day].render(year)
+        return year_tables[table][year][day]
     except (KeyError, TypeError):
-        this_year = eval_year(year, raw_tables[table], False)
+        this_year = eval_year(year, raw_tables[table])
         try:
             year_tables[table][year] = this_year
         except (KeyError, TypeError):
             year_tables[table] = {year: this_year}
-        return year_tables[table][year][day].render(year)
+        return year_tables[table][year][day]
+
+
+def martyrology_query(day, table):
+    candidates = raw_query(day, table)
+    return assemble_martyrology(candidates, day.year)
 
 
 def init():
