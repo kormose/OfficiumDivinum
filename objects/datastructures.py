@@ -228,6 +228,15 @@ class Feria:
 
 
 @dataclass
+class MartyrologyInfo:
+    """Class to represent a martyrology entry which should be appended after the date
+    and before the content fixed for the day."""
+
+    date: Date
+    content: list
+
+
+@dataclass
 class Martyrology:
     """Class to represent the martyrology for a given day."""
 
