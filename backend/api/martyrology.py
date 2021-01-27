@@ -15,7 +15,7 @@ def init():
 
 
 def json_query(day, table):
-    old_date, martyrology = database.raw_query(day, table)
+    old_date, martyrology = database.martyrology_query(day, table)
     return jsonify({"old_date": old_date, "content": martyrology})
 
 
@@ -47,8 +47,9 @@ def json_api_query():
     query = request.get_json()
     if query["request"] == "martyrology"
 
+
 def html_query(day, table):
-    old_date, content = database.raw_query(day, table)
+    old_date, content = database.martyrology_query(day, table)
     args = {"old_date": old_date, "content": content}
     return martyrology_template.render(**args)
 
