@@ -13,26 +13,42 @@ from ..objects import datastructures  # needed for unpickling.
 martyrology = []
 
 
-def eval_year(year, yearless, as_list=True):
+def eval_year(year, yearless):
+    """
+
+    Parameters
+    ----------
+    year :
+
+    yearless :
+
+    as_list :
+         (Default value = True)
+
+    Returns
+    -------
+
+    """
     yeared = {}
     for row in yearless:
         if not row:
             continue
-        date = row.date.resolve(year)
-        if as_list:
-            try:
-                yeared[date].append(row)
-            except KeyError:
-                yeared[date] = [row]
-        else:
-            yeared[date] = row
+        try:
+            date = row.date.resolve(year)
+        except AttributeError:
+            print(row)
+        try:
+            yeared[date].append(row)
+        except KeyError:
+            yeared[date] = [row]
 
     return yeared
 
 
 def load_martyrology():
+    """"""
     global martyrology
-    with Path("OfficiumDivinum/api/martyrology.json").open() as f:
+    with Path("backend/api/martyrology.json").open() as f:
         raw_tables["martyrology"] = jsonpickle.decode(
             f.read(), classes=[datastructures.Date, datastructures.Martyrology]
         )
@@ -45,7 +61,19 @@ raw_tables = {}
 
 
 def raw_query(day, table):
-    """Query table for data on day."""
+    """
+    Query table for data on day.
+
+    Parameters
+    ----------
+    day :
+
+    table :
+
+
+    Returns
+    -------
+    """
     global raw_tables, year_tables
     year = day.year
     try:
