@@ -4365,7 +4365,6 @@
     "old_date": "Quarto Nonas Nov\u00e9mbris",
     "content": [
       "Commemor\u00e1tio \u00f3mnium Fidelium Defunctorum.",
-      "_",
       "P\u0153tovi\u00f3ne, in Pann\u00f3nia superi\u00f3re, nat\u00e1lis sancti Victor\u00edni, ej\u00fasdem civit\u00e1tis Ep\u00edscopi, qui, post multa \u00e9dita scripta (ut sanctus Hier\u00f3nymus test\u00e1tur), in persecuti\u00f3ne Diocleti\u00e1ni, mart\u00fdrio coron\u00e1tus est.",
       "Terg\u00e9ste p\u00e1ssio be\u00e1ti Justi, qui in e\u00e1dem persecuti\u00f3ne, sub Man\u00e1tio Pr\u01fdside, mart\u00fdrium consumm\u00e1vit.",
       "Seb\u00e1ste, in Arm\u00e9nia, sanct\u00f3rum Cart\u00e9rii, Styri\u00e1ci, Tob\u00ed\u00e6, Eud\u00f3xii, Ag\u00e1pii et Soci\u00f3rum M\u00e1rtyrum, sub Lic\u00ednio Imperat\u00f3re.",
@@ -7826,295 +7825,282 @@
     },
     "moonstr": " Luna {ordinal} Anno Domini {year}"
   },
-  [
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "1st Sun after Advent",
-        "date": null
-      },
-      "content": [
-        "Dom\u00ednica prima Adv\u00e9ntus D\u00f3mini nostri Jesu Christi."
-      ]
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "1st Sun after Advent",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "1st Sun after Christmas",
-        "date": null
-      },
-      "content": [
-        "Festum sanct\u00edsimi N\u00f3minis Jesu."
-      ]
+    "content": [
+      "Dom\u00ednica prima Adv\u00e9ntus D\u00f3mini nostri Jesu Christi."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "1st Sun after Christmas",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "2nd Sun after Christmas",
-        "date": null
-      },
-      "content": [
-        "Festum sanct\u00e6 Fam\u00edli\u00e6 Jesu, Mar\u00ed\u00e6, Joseph; ex qua Christi\u00e1nis fam\u00edliis sanct\u00edssima propon\u00fantur ex\u00e9mpla, et opport\u00fana invoc\u00e1ntur aux\u00edlia."
-      ]
+    "content": [
+      "Festum sanct\u00edsimi N\u00f3minis Jesu."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "2nd Sun after Christmas",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "1st Sun after Septuagesima",
-        "date": null
-      },
-      "content": [
-        "Dom\u00ednica Septuag\u00e9sima, in qua dep\u00f3nitur C\u00e1nticum D\u00f3mini \u00abAllel\u00faja\u00bb."
-      ]
+    "content": [
+      "Festum sanct\u00e6 Fam\u00edli\u00e6 Jesu, Mar\u00ed\u00e6, Joseph; ex qua Christi\u00e1nis fam\u00edliis sanct\u00edssima propon\u00fantur ex\u00e9mpla, et opport\u00fana invoc\u00e1ntur aux\u00edlia."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "1st Sun after Septuagesima",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "3rd Wed after Septuagesima",
-        "date": null
-      },
-      "content": [
-        "Dies C\u00ednerum, et in\u00edtium jej\u00fanii sacrat\u00edssim\u00e6 Quadrag\u00e9sim\u00e6."
-      ]
+    "content": [
+      "Dom\u00ednica Septuag\u00e9sima, in qua dep\u00f3nitur C\u00e1nticum D\u00f3mini \u00abAllel\u00faja\u00bb."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "3rd Wed after Septuagesima",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "5th Sun after Lent",
-        "date": null
-      },
-      "content": [
-        "Dom\u00ednica Passi\u00f3nis."
-      ]
+    "content": [
+      "Dies C\u00ednerum, et in\u00edtium jej\u00fanii sacrat\u00edssim\u00e6 Quadrag\u00e9sim\u00e6."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "5th Sun after Lent",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "5th Fri after Lent",
-        "date": null
-      },
-      "content": [
-        "Festum Septem Dol\u00f3rum Beat\u00edssim\u00e6 V\u00edrginis Mar\u00ed\u00e6."
-      ]
+    "content": [
+      "Dom\u00ednica Passi\u00f3nis."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "5th Fri after Lent",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "6th Sun after Lent",
-        "date": null
-      },
-      "content": [
-        "Dom\u00ednica Palm\u00e1rum, quando D\u00f3minus noster Jesus Christus, juxta Zachar\u00ed\u00e6 prophet\u00edam, sedens super pullum \u00e1sin\u00e6, Hieros\u00f3lymam intr\u00e1vit; cui turba cum ramis palm\u00e1rum \u00f3bviam venit."
-      ]
+    "content": [
+      "Festum Septem Dol\u00f3rum Beat\u00edssim\u00e6 V\u00edrginis Mar\u00ed\u00e6."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "6th Sun after Lent",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "6th Thu after Lent",
-        "date": null
-      },
-      "content": [
-        "C\u0153na Dom\u00ednica, quando Christus Jesus, die quam pro nostra sal\u00fate crucifiger\u00e9tur, myst\u00e9ria C\u00f3rporis et S\u00e1nguinis sui disc\u00edpulis tr\u00e1didit celebr\u00e1nda."
-      ]
+    "content": [
+      "Dom\u00ednica Palm\u00e1rum, quando D\u00f3minus noster Jesus Christus, juxta Zachar\u00ed\u00e6 prophet\u00edam, sedens super pullum \u00e1sin\u00e6, Hieros\u00f3lymam intr\u00e1vit; cui turba cum ramis palm\u00e1rum \u00f3bviam venit."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "6th Thu after Lent",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "0th Mon after Easter",
-        "date": null
-      },
-      "content": [
-        "Hac die quam fecit D\u00f3minus, Sol\u00e9mnitas solemnit\u00e1tum et Pascha nostrum: Resurr\u00e9ctio Salvat\u00f3ris nostri Jesu Christi sec\u00fandum carnem."
-      ]
+    "content": [
+      "C\u0153na Dom\u00ednica, quando Christus Jesus, die quam pro nostra sal\u00fate crucifiger\u00e9tur, myst\u00e9ria C\u00f3rporis et S\u00e1nguinis sui disc\u00edpulis tr\u00e1didit celebr\u00e1nda."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "0th Mon after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "1st Sun after Easter",
-        "date": null
-      },
-      "content": [
-        "Dom\u00ednica in Albis in Oct\u00e1va Pasch\u00e6."
-      ]
+    "content": [
+      "Hac die quam fecit D\u00f3minus, Sol\u00e9mnitas solemnit\u00e1tum et Pascha nostrum: Resurr\u00e9ctio Salvat\u00f3ris nostri Jesu Christi sec\u00fandum carnem."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "1st Sun after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "2nd Wed after Easter",
-        "date": null
-      },
-      "content": [
-        "Sol\u00e9mnitas sancti Joseph, Sponsi be\u00e1t\u00e6 Mar\u00ed\u00e6 V\u00edrginis, Confess\u00f3ris et univers\u00e1lis Eccl\u00e9si\u00e6 Patr\u00f3ni."
-      ]
+    "content": [
+      "Dom\u00ednica in Albis in Oct\u00e1va Pasch\u00e6."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "2nd Wed after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "3rd Wed after Easter",
-        "date": null
-      },
-      "content": [
-        "Oct\u00e1va Sol\u00e9mnitas sancti Joseph, Sponsi be\u00e1t\u00e6 Mar\u00ed\u00e6 V\u00edrginis, Confess\u00f3ris et univers\u00e1lis Eccl\u00e9si\u00e6 Patr\u00f3ni."
-      ]
+    "content": [
+      "Sol\u00e9mnitas sancti Joseph, Sponsi be\u00e1t\u00e6 Mar\u00ed\u00e6 V\u00edrginis, Confess\u00f3ris et univers\u00e1lis Eccl\u00e9si\u00e6 Patr\u00f3ni."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "3rd Wed after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "5th Mon after Easter",
-        "date": null
-      },
-      "content": [
-        "Rom\u00e6 Litan\u00ed\u00e6 min\u00f3res ad sanctam Mar\u00edam Maj\u00f3rem."
-      ]
+    "content": [
+      "Oct\u00e1va Sol\u00e9mnitas sancti Joseph, Sponsi be\u00e1t\u00e6 Mar\u00ed\u00e6 V\u00edrginis, Confess\u00f3ris et univers\u00e1lis Eccl\u00e9si\u00e6 Patr\u00f3ni."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "5th Mon after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "5th Tue after Easter",
-        "date": null
-      },
-      "content": [
-        "Rom\u00e6 Litan\u00ed\u00e6 min\u00f3res ad sanctum Jo\u00e1nnem in Later\u00e1no."
-      ]
+    "content": [
+      "Rom\u00e6 Litan\u00ed\u00e6 min\u00f3res ad sanctam Mar\u00edam Maj\u00f3rem."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "5th Tue after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "5th Wed after Easter",
-        "date": null
-      },
-      "content": [
-        "Vig\u00edlia Ascensi\u00f3nis D\u00f3mini nostri Jesu Christi.",
-        "Rom\u00e6 Litan\u00ed\u00e6 min\u00f3res ad sanctum Petrum."
-      ]
+    "content": [
+      "Rom\u00e6 Litan\u00ed\u00e6 min\u00f3res ad sanctum Jo\u00e1nnem in Later\u00e1no."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "5th Wed after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "5th Thu after Easter",
-        "date": null
-      },
-      "content": [
-        "In Monte Oliv\u00e9ti Asc\u00e9nsio D\u00f3mini nostri Jesu Christi."
-      ]
+    "content": [
+      "Vig\u00edlia Ascensi\u00f3nis D\u00f3mini nostri Jesu Christi.",
+      "Rom\u00e6 Litan\u00ed\u00e6 min\u00f3res ad sanctum Petrum."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "5th Thu after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "6th Sat after Easter",
-        "date": null
-      },
-      "content": [
-        "Vig\u00edlia Pentec\u00f3stes."
-      ]
+    "content": [
+      "In Monte Oliv\u00e9ti Asc\u00e9nsio D\u00f3mini nostri Jesu Christi."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "6th Sat after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "7th Sun after Easter",
-        "date": null
-      },
-      "content": [
-        "Dies Pentec\u00f3stes, quando Sp\u00edritus sanctus Hieros\u00f3lymis super disc\u00edpulos \u00edgneis linguis adv\u00e9nit."
-      ]
+    "content": [
+      "Vig\u00edlia Pentec\u00f3stes."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "7th Sun after Easter",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "1st Sun after Pentecost",
-        "date": null
-      },
-      "content": [
-        "Festum sacrat\u00edssim\u00e6 et indiv\u00eddu\u00e6 Trinit\u00e1tis, et Oct\u00e1va Pentec\u00f3stes."
-      ]
+    "content": [
+      "Dies Pentec\u00f3stes, quando Sp\u00edritus sanctus Hieros\u00f3lymis super disc\u00edpulos \u00edgneis linguis adv\u00e9nit."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "1st Sun after Pentecost",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "1st Thu after Pentecost",
-        "date": null
-      },
-      "content": [
-        "Festum sanct\u00edssimi C\u00f3rporis Christi."
-      ]
+    "content": [
+      "Festum sacrat\u00edssim\u00e6 et indiv\u00eddu\u00e6 Trinit\u00e1tis, et Oct\u00e1va Pentec\u00f3stes."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "1st Thu after Pentecost",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "2nd Thu after Pentecost",
-        "date": null
-      },
-      "content": [
-        "Oct\u00e1va sanct\u00edssimi C\u00f3rporis Christi."
-      ]
+    "content": [
+      "Festum sanct\u00edssimi C\u00f3rporis Christi."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "2nd Thu after Pentecost",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "2nd Fri after Pentecost",
-        "date": null
-      },
-      "content": [
-        "Festum sacrat\u00edssimi Cordis Jesu."
-      ]
+    "content": [
+      "Oct\u00e1va sanct\u00edssimi C\u00f3rporis Christi."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "2nd Fri after Pentecost",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "3rd Fri after Pentecost",
-        "date": null
-      },
-      "content": [
-        "Oct\u00e1va sacrat\u00edssimi Cordis Jesu."
-      ]
+    "content": [
+      "Festum sacrat\u00edssimi Cordis Jesu."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "3rd Fri after Pentecost",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "Sat between 23 Oct 31 Oct",
-        "date": null
-      },
-      "content": [
-        "Festum D\u00f3mini nostri Jesu Christi Regis."
-      ]
+    "content": [
+      "Oct\u00e1va sacrat\u00edssimi Cordis Jesu."
+    ]
+  },
+  {
+    "py/object": "backend.objects.datastructures.MartyrologyInfo",
+    "date": {
+      "py/object": "backend.objects.datastructures.Date",
+      "rules": "Sat between 23 Oct 31 Oct",
+      "date": null
     },
-    {
-      "py/object": "backend.objects.datastructures.MartyrologyInfo",
-      "date": {
-        "py/object": "backend.objects.datastructures.Date",
-        "rules": "2 Nov",
-        "date": null
-      },
-      "content": [
-        "Hac die Commemor\u00e1tio \u00f3mnium Fid\u00e9lium Defunct\u00f3rum; in qua comm\u00fanis pia Mater Eccl\u00e9sia, postquam univ\u00e9rsos f\u00edlios suos jam in c\u00e6lo l\u00e6t\u00e1ntes c\u00f3ngruis st\u00faduit celebr\u00e1re pr\u00e6c\u00f3niis, mox et omnes adhuc in Purgat\u00f3rio gem\u00e9ntes v\u00e1lidis apud D\u00f3minum et Sponsum Christum sat\u00e1git suffr\u00e1giis adjuv\u00e1re, ut quam c\u00edtius v\u00e1leant ad societ\u00e1tem supern\u00f3rum c\u00edvium perven\u00edre."
-      ]
-    }
-  ],
+    "content": [
+      "Festum D\u00f3mini nostri Jesu Christi Regis."
+    ]
+  },
   {
     "py/object": "backend.objects.datastructures.Martyrology",
     "date": {
