@@ -42,10 +42,10 @@ def get_martyrology():
     return html_query(day, "martyrology")
 
 
-@api.route("/jsonapi", methods=["GET"])
-def json_api_query():
-    query = request.get_json()
-    if query["request"] == "martyrology"
+# @api.route("/jsonapi", methods=["GET"])
+# def json_api_query():
+#     query = request.get_json()
+#     if query["request"] == "martyrology"
 
 
 def html_query(day, table):
