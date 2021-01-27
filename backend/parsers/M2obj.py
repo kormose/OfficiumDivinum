@@ -51,17 +51,18 @@ def parse_mobile_file(fn: Path) -> list[MartyrologyInfo]:
     -------
     List of Martyrology objects with rules, which can be applied.
     """
-    sections = parse_DO_sections(fn.readlines())
+    with fn.open() as f:
+        sections = parse_DO_sections(f.readlines())
 
     mobile = []
 
     for datestr, section in sections.items():
         try:
-            special, week, day = re.search(r"(.+)([0-9]+)-([0-9])", datestr).group(
-                1, 2, 3
-            )
+            match = re.search(r"(.*?)([0-9]+)-([0-9])", datestr)
+            special = match.group(1)
+            week, day = (int(i) for i in match.group(2, 3))
             datestr = f"{ordinals[week]} {days[day]} after {specials[special]}"
-        except IndexError:
+        except (AttributeError, IndexError):
             if datestr == "Nativity":  # hard coded elsewhere.
                 continue
             elif datestr == "10-DU":
@@ -69,5 +70,5 @@ def parse_mobile_file(fn: Path) -> list[MartyrologyInfo]:
             elif datestr == "Defuncti":
                 datestr = "2 Nov"
 
-            mobile.append(MartyrologyInfo(Date(datestr), section))
+        mobile.append(MartyrologyInfo(Date(datestr), section))
     return mobile
