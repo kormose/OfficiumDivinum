@@ -1,14 +1,17 @@
+from pathlib import Path
+
 from backend.parsers.run_parser import pokemon_to_json
 
-sanctoral, temporal, martyrology = pokemon_to_json(
-    "Latin", "1960", "~/code/office-generator/divinumofficium/DO_web/www/horas"
+things = list(
+    pokemon_to_json(
+        "Latin", "1960", "~/code/office-generator/divinumofficium/DO_web/www/horas"
+    )
 )
 
-with open("sanctoral.json", "w") as f:
-    f.write(sanctoral)
+fns = ("sanctoral", "temporal", "martyrology")
 
-with open("temporal.json", "w") as f:
-    f.write(temporal)
+root = Path("./backend/api")
 
-with open("martyrology.json", "w") as f:
-    f.write(martyrology)
+for i in range(len(fns)):
+    with (root / f"{fns[i]}.json").open("w") as f:
+        f.write(things[i])
