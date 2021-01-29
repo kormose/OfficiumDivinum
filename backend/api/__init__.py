@@ -1,2 +1,2 @@
 """Api module."""
-# from .martyrology import *
+from .martyrology import *
