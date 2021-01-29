@@ -1,0 +1,66 @@
+#+Title: An object-oriented rewrite of divinumofficium
+
+* About
+
+OfficiumDivinum is an object-oriented re-write of divinumofficium.
+Divinumofficium is an incredible achievement: it presents the complete
+divine office and missal of the Roman rite from its Tridentine form
+through to its currently authorised version (‘rubrics 1960’), as well
+as a ‘monastic’ office and now the Dominican breviary.  It does this
+with a collection of perl scripts parsing a text-based homegrown
+database structure and outputting html to STDOUT which is then
+served.  That something so complicated was concieved and put together
+by one man is incredible.  Unfortunately, it is hard to know how it
+works:
+
+- Some data is stored in various (not really documented) text files,
+  other is hard-coded into scripts.
+- Some things are in funny places (for instance, the feast of the Holy
+  Name of Jesus is assigned in the calendar to the ‘0th January’, and
+  then moved to its variable date by the code).
+- Perl is very hard to read, at least for non perl coders!
+- Functions call each other in fun and non-obvious ways (at least for
+  non perl coders!)
+- It’s basically stateless, and takes the /Divinum Afflatu/ version as
+  the ‘default’, then to mutate it.  But this occasionally has problems.
+
+And it is hard to extend it:
+
+- The database format (which in any case is not used for everything)
+  is basically designed to output plaintext.
+- There are no symbolic representations of e.g. days, psalms, chapters
+  which could be traded for e.g. .gabc files to generate scores to
+  sing from.
+- Perl is hard!  (Did I say that before?)
+
+OfficiumDivinum is an attempt to address these problems by a complete
+re-write in a more modern idiom.
+
+** Architecture
+
+If divinumofficium did one thing, we do the opposite.  This may well
+need correcting down the line.
+
+- Backend :: The backend generates internal representations used by
+  the server.  The backend is written in python and is heavily
+  object-oriented.
+- Server :: The server serves this content via a REST-like (hopefully
+  RESTfull, but that’s a contested term) API.  It does this either in
+  a format very close to the backend (a json which can be deserialised
+  back to python objects), or html, or latex, or gabc.  The API uses
+  Flask, whilst the database is mysql.
+- Frontend :: The frontend is up to you!  We provide a server, you
+  build a website, or an app, around it.  But we hope to provide an
+  example website.  Since the API does the heavy lifting, the page can
+  be simple, and embedding is easy!
+
+* Status
+
+We are very much in beta.  For now, see the docs in ~api~ and the
+testing implementation at ~2e0byo.pythonanywhere.org~.
+
+* Contributing
+
+OfficiumDivinum aims ultimately to be easy to contribute to, even for
+non-coders.  For now, clone, edit, and open a pull request.
+
