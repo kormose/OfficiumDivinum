@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 from functools import total_ordering
-from typing import Union
+from typing import List, Union
 
 import pylunar
 
@@ -189,8 +189,8 @@ class Feast:
     Type: str
     name: str = None
     celebration: Celebration = None
-    commemorations: list = None
-    qualifiers: list = None  # for matching things up in DO's weird system
+    commemorations: List = None
+    qualifiers: List = None  # for matching things up in DO's weird system
 
     def __post_init__(self):
         """Check constraints."""
@@ -233,7 +233,7 @@ class MartyrologyInfo:
     and before the content fixed for the day."""
 
     date: Date
-    content: list
+    content: List
 
 
 @dataclass
@@ -242,8 +242,8 @@ class Martyrology:
 
     date: Date
     old_date: str
-    content: list
-    ordinals: list = None
+    content: List
+    ordinals: List = None
     moonstr: str = " Luna {ordinal} Anno Domini {year}"
 
     def __post_init__(self):
@@ -302,7 +302,7 @@ class Reading:
 
     name: str
     ref: str
-    content: list[Union[Verse, str]]
+    content: List[Union[Verse, str]]
     description: str = None
 
 
@@ -320,7 +320,7 @@ class Responsory:
     -------
     """
 
-    content: list[str]
+    content: List[str]
 
 
 @dataclass
@@ -339,7 +339,7 @@ class Rules:
     nocturns: int = None
     sunday_psalms: bool = None
     antiphons_at_hours: bool = None
-    proper_hymns: list[str] = None
+    proper_hymns: List[str] = None
     Te_Deum: bool = None
     skip_psalm_93 = None
     lessons: int = None
@@ -347,7 +347,7 @@ class Rules:
     feria: bool = None
     festum_Domini: bool = None
     gloria_responsory: bool = None
-    vespers_antiphons: list[str] = None
+    vespers_antiphons: List[str] = None
     second_chapter_verse: bool = None
     second_chapter_verse_lauds: bool = None
     commemoration_key: int = None
@@ -369,7 +369,7 @@ class Rules:
     no_commemoration: bool = None
     no_suffragium: bool = None
     no_commemoration_sunday: bool = None
-    omit: list = None
+    omit: List = None
     sunday_collect: bool = None
     preces_feriales: bool = None
     proper: bool = None
