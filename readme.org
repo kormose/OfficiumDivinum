@@ -57,7 +57,13 @@ need correcting down the line.
 * Status
 
 We are very much in beta.  For now, see the docs in ~api~ and the
-testing implementation at ~2e0byo.pythonanywhere.org~.
+testing implementation at ~2e0byo.pythonanywhere.org~.  This server is
+updated by pushes to master at this repo, so if you have push access
+/don’t push to master until you’re sure/.
+
+* Documentation
+
+Will shortly be hosted on readthedocs.
 
 * Contributing
 
