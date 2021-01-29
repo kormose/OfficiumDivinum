@@ -48,6 +48,9 @@ def eval_year(year, yearless):
 def load_martyrology():
     """"""
     global martyrology
+    import os
+
+    print(os.getcwd())
     with Path("backend/api/martyrology.json").open() as f:
         raw_tables["martyrology"] = jsonpickle.decode(
             f.read(), classes=[datastructures.Date, datastructures.Martyrology]
