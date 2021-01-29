@@ -15,7 +15,10 @@ from flask import abort, request
 
 from .api import api
 
-w_secret = os.environ["WEBHOOK_SECRET"]
+try:
+    w_secret = os.environ["WEBHOOK_SECRET"]
+except KeyError:
+    pass
 
 
 def is_valid_signature(x_hub_signature, data, private_key):
