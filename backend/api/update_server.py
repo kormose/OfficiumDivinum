@@ -71,7 +71,7 @@ def webhook():
         if payload["ref"] != "refs/heads/master":
             return json.dumps({"msg": "Not master; ignoring"})
 
-        repo = git.Repo("/var/www/sites/mysite")
+        repo = git.Repo("~/OfficiumDivinum")
         origin = repo.remotes.origin
 
         pull_info = origin.pull()
