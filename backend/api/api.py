@@ -1,3 +1,3 @@
-from flask import Flask
+from flask_api import FlaskAPI
 
-api = Flask(__name__)
+api = FlaskAPI(__name__)
