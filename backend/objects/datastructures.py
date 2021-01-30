@@ -293,7 +293,9 @@ class Verse:
     """"""
 
     number: int
+    book: str
     content: str
+    version: str = None  # in case we want it later
 
 
 @dataclass
