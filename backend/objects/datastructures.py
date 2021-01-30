@@ -294,13 +294,14 @@ class Verse:
     """"""
 
     number: int
+    chapter: int
     book: str
     content: str
     version: str = None  # in case we want it later
 
     def html(self):
         """Return html rendered."""
-        return verse_template.render(self)
+        return verse_template.render(v=self)
 
 
 @dataclass

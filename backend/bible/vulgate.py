@@ -26,11 +26,11 @@ class Vulgate(Bible):
                     current_book_name = book_name
                 try:
                     book[chapter][verseno] = Verse(
-                        verseno, book_name, verse, self.version
+                        verseno, chapter, book_name, verse, self.version
                     )
                 except KeyError:
                     book[chapter] = DotMap()
                     book[chapter][verseno] = Verse(
-                        verseno, book_name, verse, self.version
+                        verseno, chapter, book_name, verse, self.version
                     )
         self.content[book_name] = book
