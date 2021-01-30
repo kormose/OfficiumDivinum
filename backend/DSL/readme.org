@@ -19,7 +19,6 @@ it needs very limited components.  These are:
   side of it and evaluates to True if either side is True.
 - NOT :: the NOT operator inverts a condition.
 - date expressions :: are the main thing.  Covered below.
-- brackets :: used for semantic grouping.  (NOT IMPLEMENTED YET)
 
 ** Date expressions.
 Date expressions cannot have years (as these are not, I think, needed).  A
@@ -77,16 +76,12 @@ Thus
 
 ** Parsing
 
-Putting this all together: the parser first looks for brackets, and
-splits them off into sub-groups.  Thus all brackets must be valid
-expressions.  Thus ~(2) Jan~ is not valid, but ~(2 Jan)~ is.
-
-Expressions are evaluated left-to-right, assuming the largest
-possible unit.  Thus:
+Expressions are evaluated left-to-right, assuming the largest possible
+unit, and returning the first match if more than one is found.  Thus:
 
 #+begin_src 
-(2 Jan) OR (4 Jan) => both are True
-(1st Sun between 2 Jan 6 Jan) OR (4 Jan) =>first is possibly True, second is True
+2 Jan OR 4 Jan => both are True, returns 2 Jan
+1st Sun between 2 Jan 6 Jan OR 4 Jan =>first is possibly True, second is True
 #+end_src
 
 Then the parser simply returns /the first match/.  Thus in the first
@@ -107,6 +102,7 @@ has been made to make the parser detect syntax errors.
 The parser uses pyparsing, and is currently not very neat
 (specifically, it chooses to manipulate strings rather than parsed
 objects, and so is rather redundant in its handling).  It handles all
-valid input cases and has some basic error handling.  /It does not yet
-handle brackets/ as I doubt we need them (may remove).  On the other
-hand we could just make the parsing function recursive.
+valid input cases and has some basic error handling.
+
+If we need more complex date expressions I will 1. rewrite the parser
+to deal entirely in objects and 2. make it recursive to handle brackets.
