@@ -1,6 +1,51 @@
+<!DOCTYPE html>
 <html>
+  <script>
+    function includeHTML() {
+	var z, i, elmnt, file, xhttp;
+	/*loop through a collection of all HTML elements:*/
+	z = document.getElementsByTagName("*");
+	for (i = 0; i < z.length; i++) {
+	    elmnt = z[i];
+	    /*search for elements with a certain atrribute:*/
+	    file = elmnt.getAttribute("w3-include-html");
+	    if (file) {
+		/*make an HTTP request using the attribute value as the file name:*/
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4) {
+			if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+			if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+			/*remove the attribute, and call this function once more:*/
+			elmnt.removeAttribute("w3-include-html");
+			includeHTML();
+		    }
+		}      
+		xhttp.open("GET", file, true);
+		xhttp.send();
+		/*exit the function:*/
+		return;
+	    }
+	}
+    };
+  </script>
   <head> 
     <title>Test page for OfficiumDivinum API</title>
+    <style>
+      verse-no {
+	  font-size: 50%;
+	  color: red;
+	  vertical-align: super;
+      }
+      chapter-no::after {
+	  content: ":"
+      }
+      chapter-no {
+	  font-size: 50%;
+	  color: red;
+	  vertical-align: super;
+      }
+    </style>
   </head>
   <body>
     <h1>Test page for OfficiumDivinum API</h1>
@@ -8,7 +53,13 @@
     <p>
       <h2>Tomorrow's Martyrology (as read today)</h2>
       <iframe height="500" width="500" src="http://2e0byo.pythonanywhere.com/martyrology"
-	      style="border:1px solid black;" caption="test"></iframe>
+	      style="border:1px solid black;"></iframe>
     </p>
+    <div>
+      <h2>Gen 1.1</h2>
+      <div w3-include-html="bible/?version=vulgate&book=Gn&verse=1&chapter=1"></div> 
+      <script>
+	includeHTML();
+      </script>
   </body>
 </html>
