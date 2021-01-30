@@ -13,6 +13,7 @@ from .divinumofficium_structures import (
     traditional_rank_lookup_table,
     typo_translations,
 )
+from .html_render import verse_template
 
 """
 Since sometimes we call parsers manually, we enforce only parsing for
@@ -296,6 +297,10 @@ class Verse:
     book: str
     content: str
     version: str = None  # in case we want it later
+
+    def html(self):
+        """Return html rendered."""
+        return verse_template.render(self)
 
 
 @dataclass
