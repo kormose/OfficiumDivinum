@@ -5,7 +5,6 @@ from flask_api.renderers import (
     BrowsableAPIRenderer,
     JSONRenderer,
 )
-from jinja2 import Environment, PackageLoader
 
 from ..bible import Vulgate
 from .api import api
@@ -26,13 +25,8 @@ class objectHTMLRenderer(BaseRenderer):
             return rendered
 
 
-#
-# api.config["DEFAULT_RENDERERS"] = [JSONRenderer]
-
-
 @api.route("/bible/", methods=["Get"])
-# @set_renderers(objectHTMLRenderer, BrowsableAPIRenderer)  # JSONRenderer,
-@set_renderers(objectHTMLRenderer)
+@set_renderers(JSONRenderer, objectHTMLRenderer, BrowsableAPIRenderer)
 def get_verses():
 
     query = request.get_json()
@@ -40,7 +34,6 @@ def get_verses():
         args = request.args
         bible = versions[args["version"]]
         if not bible.content:
-            print("loading")
             bible.load()
         book = args["book"]
         chapter = str(args["chapter"])
@@ -48,16 +41,15 @@ def get_verses():
         verse = bible.content[book][chapter][verseno]
         return [verse]
 
-    bible = versions[query["version"]]
-    if not bible.content:
-        bible.load()
-
-    verses = query["verses"]
-    if "nostyle" not in args.keys():
-        response = page_css.render()
     else:
-        response = ""
-    for book, chapter, verse in verses:
-        response += bible.book[chapter][verse].html()
+        print(query)
 
-    return response
+        bible = versions[query["version"]]
+        if not bible.content:
+            bible.load()
+        verses = []
+        for book, chapter, verse in query["verses"]:
+            chapter = str(chapter)
+            verse = str(verse)
+            verses.append(bible.content[book][chapter][verse])
+        return verses
