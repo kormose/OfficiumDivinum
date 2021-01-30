@@ -34,3 +34,15 @@ class Vulgate(Bible):
                         verseno, chapter, book_name, verse, self.version
                     )
         self.content[book_name] = book
+
+    def load(self):
+        """
+        Load content.
+
+        We can get this from a database later.
+        """
+        import os
+
+        print(os.getcwd())
+        fn = Path("./backend/bible/vulgate.txt")
+        self.from_file(fn)
