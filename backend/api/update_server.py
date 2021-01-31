@@ -59,7 +59,7 @@ def webhook():
         x_hub_signature = request.headers.get("X-Hub-Signature")
         # webhook content type should be application/json for request.data to have the payload
         # request.data is empty in case of x-www-form-urlencoded
-        if not is_valid_signature(x_hub_signature, request.data, w_secret):
+        if not is_valid_signature(x_hub_signature, request.get_data(), w_secret):
             print("Deploy signature failed: {sig}".format(sig=x_hub_signature))
             abort(abort_code)
 
