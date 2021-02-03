@@ -1,4 +1,4 @@
-from flask import request
+from flask import abort, request
 from flask_api.decorators import set_renderers
 from flask_api.renderers import (
     BaseRenderer,
@@ -8,6 +8,8 @@ from flask_api.renderers import (
 
 from ..bible import Vulgate
 from .api import api
+
+# from .errors import InvalidInput
 
 versions = {"vulgate": Vulgate("Sixto-Clementine Vulgate")}
 
@@ -35,11 +37,15 @@ def get_verses():
         bible = versions[args["version"]]
         if not bible.content:
             bible.load()
-        book = args["book"]
-        chapter = str(args["chapter"])
-        verseno = str(args["verse"])
-        verse = bible.content[book][chapter][verseno]
-        return [verse]
+
+        try:
+            start = args["start"]
+            end = args["end"] if "end" in args.keys() else None
+            verses = bible.get_range(start, end)
+            return verses
+
+        except Exception:
+            abort(400)
 
     else:
         print(query)
@@ -48,8 +54,22 @@ def get_verses():
         if not bible.content:
             bible.load()
         verses = []
-        for book, chapter, verse in query["verses"]:
-            chapter = str(chapter)
-            verse = str(verse)
-            verses.append(bible.content[book][chapter][verse])
+        try:
+            for book, chapter, verse in query["verses"]:
+                chapter = chapter
+                verse = verse
+                verses.append(bible.content[book][chapter][verse])
+        except KeyError:
+            pass
+
+        try:
+            start = query["start"]
+            end = query["end"] if "end" in query.keys() else None
+            verses += bible.get_range(start, end)
+        except KeyError:
+            pass
+
+        if not verses:
+            abort(400)
+
         return verses
