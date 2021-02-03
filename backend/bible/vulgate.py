@@ -20,6 +20,9 @@ class Vulgate(Bible):
                 ).groups()
 
                 book_name, chapter, verseno, verse = results
+                book_name = book_name.replace(" ", "")
+                chapter = int(chapter)
+                verseno = int(verseno)
                 if book_name != current_book_name:
                     self.content[current_book_name] = book
                     book = DotMap()
