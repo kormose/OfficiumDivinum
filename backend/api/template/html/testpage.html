@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Test Page for OfficiumDivinum API{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h2>Tomorrow's Martyrology (as read today)</h2>
+{{ martyrology }}
+<h2>Gen 1.1</h2>
+{{ Gen }}
+{% endblock %}

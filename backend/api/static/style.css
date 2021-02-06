@@ -1,0 +1,13 @@
+verse-no {
+    font-size: 50%;
+    color: red;
+    vertical-align: super;
+}
+chapter-no::after {
+    content: ":"
+}
+chapter-no {
+    font-size: 50%;
+    color: red;
+    vertical-align: super;
+}
