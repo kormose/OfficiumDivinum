@@ -29,11 +29,13 @@ class Bible:
 
         print(start_ref, end_ref)
         if end_ref:
-            while current_ref != end_ref:
+            while True:
                 book, chapter, verse = current_ref
                 chapter = int(chapter)
                 verse = int(verse)
                 verses.append(self.content[book][chapter][verse])
+                if current_ref == end_ref:
+                    break
 
                 if verse + 1 in self.content[book][chapter].keys():
                     current_ref = (book, chapter, verse + 1)
